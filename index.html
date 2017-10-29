@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Ivo Meißner - Entrepreneur / Software Engineer</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <div>
+      ~/ $ <span id="content">
+      </span>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/typed.js"></script>
+    <script>
+    function bulkText(lines, prefix) {
+      return '`' + lines.join('<br>') + (prefix || '') + '`';
+    }
+    var prefix = '`<br>~/ $ `';
+    var lines = [
+      '^600whoami',
+      '`<br>Ivo Meißner<br>' + prefix + '`',
+      'echo $MISSION',
+      '`<br>Helping people and organizations build great software<br>' + prefix + '`',
+      '^600pwd',
+      '`<br>/USA/Texas/Austin<br>' + prefix + '`',
+      '^600echo $SOCIAL_MEDIA<br>',
+      bulkText([
+        'Github: \n<a href="https://github.com/ivome">https://github.com/ivome</a>',
+        'LinkedIn: \n<a href="https://www.linkedin.com/in/ivomeissner/">https://www.linkedin.com/in/ivomeissner</a>',
+        'Facebook: \n<a href="https://www.facebook.com/ivo.meissner">https://www.facebook.com/ivo.meissner</a>',
+        '',
+        'Press ENTER to visit my LinkedIn profile<br>'
+      ])
+    ];
+    var text = '';
+    for (var i = 0; i < lines.length; i++) {
+      text += lines[i];
+    }
+    text += prefix;
+    var options = {
+      strings: ['', text],
+      typeSpeed: 45,
+      cursorChar: '&#9612;',
+      loop: false
+    };
+
+    var typed = new Typed(document.getElementById('content'), options);
+
+    document.addEventListener("keydown", keyDownTextField, false);
+
+    function keyDownTextField(e) {
+      var keyCode = e.keyCode;
+      if(keyCode==13) {
+        window.location.href = 'https://www.linkedin.com/in/ivomeissner/';
+      }
+    }
+    </script>
+  </body>
+</html>

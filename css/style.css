@@ -1,0 +1,10 @@
+* {
+  font-family: 'Roboto Mono', monospace;
+}
+body {
+  padding: 20px;
+}
+a {
+  color: #888;
+  font-weight: bold;
+}
