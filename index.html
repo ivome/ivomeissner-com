@@ -23,28 +23,27 @@
     function bulkText(lines, prefix) {
       return '`' + lines.join('<br>') + (prefix || '') + '`';
     }
-    var prefix = '`<br>~/ $ `';
+    var prefix = '<br>~/ $ ';
     var lines = [
-      '^600whoami',
+      '^400whoami',
       '`<br>Ivo Meißner<br>' + prefix + '`',
-      'echo $MISSION',
+      '^400echo $MISSION',
       '`<br>Helping people and organizations build great software<br>' + prefix + '`',
-      '^600pwd',
+      '^400pwd',
       '`<br>/USA/Texas/Austin<br>' + prefix + '`',
-      '^600echo $SOCIAL_MEDIA<br>',
+      '^400echo $SOCIAL_MEDIA<br>',
       bulkText([
         'Github: \n<a href="https://github.com/ivome">https://github.com/ivome</a>',
         'LinkedIn: \n<a href="https://www.linkedin.com/in/ivomeissner/">https://www.linkedin.com/in/ivomeissner</a>',
         'Facebook: \n<a href="https://www.facebook.com/ivo.meissner">https://www.facebook.com/ivo.meissner</a>',
         '',
         'Press ENTER to visit my LinkedIn profile<br>'
-      ])
+      ], prefix)
     ];
     var text = '';
     for (var i = 0; i < lines.length; i++) {
       text += lines[i];
     }
-    text += prefix;
     var options = {
       strings: ['', text],
       typeSpeed: 45,
